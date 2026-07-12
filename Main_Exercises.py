@@ -48,7 +48,28 @@ bob = Customer("bob",10.0)
 print(bob.can_afford(8.0))
 print(bob.can_afford(12.0))
 
-    
+# 5. Track Item Stock
+class MenuItem:
+    def __init__(self,name, price, in_stock):
+        self.name = name
+        self.price =price
+        self.in_stock = in_stock
+    def sell(self):
+        self.in_stock=False
+    def restock(self):
+        self.in_stock=True
+    def status(self):
+        print(f"{self.name} is in stock.") if self.in_stock== True else print(f"{self.name} is sold out.")
+muffin = MenuItem("Muffin", 2.5, True)
+muffin.status()
+muffin.sell()
+muffin.status()
+muffin.restock()
+muffin.status()
+
+
+
+
         
         
 

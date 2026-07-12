@@ -7,5 +7,16 @@ class MenuItem:
         print( f"Item: {self.name} | Price: ${self.price}")
 
 Espresso = MenuItem("Espresso",3.5)
-Espresso.describe()
-        
+Espresso.describe() 
+
+# 2. Customer Greeting
+class Customer:
+    def __init__(self,name,favorite_drink):
+        self.name = name
+        self.favorite_drink= favorite_drink
+    def greet(self):
+        print(f"Hi! I am {self.name} and I would like a {self.favorite_drink}.")
+
+alice = Customer("alice","latte")
+alice.greet()
+

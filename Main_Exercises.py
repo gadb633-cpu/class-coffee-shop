@@ -234,6 +234,29 @@ print(moshe.ready_by(20))
 moshe.print_order()
 print(moshe.slowest_item())
 
+# Extra 4. Daily Revenue Tracker
+class CoffeeShop:
+    def __init__(self,name):
+        self.name =name
+        self.revenue = 0.0
+    def sell(self,item_name, price):
+        self.revenue += price
+        print(f"{item_name} added to revenue ")
+    def sell_discounted(self,item_name, price, discount):
+        self.revenue += price*(1-discount)
+        
+    def daily_summary(self):
+        print(f"{self.name} | Daily revenue: ${self.revenue:.2f}")
+the_bean = CoffeeShop("The Bean")
+the_bean.sell("cofffee",15)
+the_bean.sell_discounted("cofffee",15,3)
+the_bean.sell("capuchino",20)
+the_bean.sell_discounted("capuchino",20,5)
+the_bean.sell("latte",25)
+the_bean.daily_summary()
+
+
+
 
 
 

@@ -255,6 +255,35 @@ the_bean.sell_discounted("capuchino",20,5)
 the_bean.sell("latte",25)
 the_bean.daily_summary()
 
+# Extra 5. Size-Based Drink Pricing
+class Drink:
+    def __init__(self,name, base_price, size):
+        self.name =name
+        self.base_price = base_price
+        self.size = size
+    def final_price(self):
+        if self.size == "small":
+            self.price=self.base_price
+            return self.price
+        if self.size == "medium":
+            self.price=self.base_price*1.3
+            return self.price
+        if self.size == "large":
+            self.price=self.base_price*1.6
+            return self.price
+    def describe(self):
+        print(f"{self.name} ({self.size}) → ${self.final_price():.2f}")
+latte = Drink("Latte", 3.0, "small")
+latte.describe()
+latte = Drink("Latte", 3.0, "medium")
+latte.describe()
+latte = Drink("Latte", 3.0, "large")
+latte.describe()
+
+
+
+
+
 
 
 

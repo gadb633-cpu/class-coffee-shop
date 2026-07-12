@@ -35,6 +35,22 @@ latte.describe()
 Croissant.describe()
 Cold_Brew.describe()
 
+# 4. Can the Customer Afford It?
+class Customer:
+    def __init__(self,name,balance):
+        self.name = name
+        self.balance = balance
+
+    def can_afford(self,price):
+        self.price = price
+        return True if self.price<= self.balance else False
+bob = Customer("bob",10.0)
+print(bob.can_afford(8.0))
+print(bob.can_afford(12.0))
+
+    
+        
+        
 
 
 

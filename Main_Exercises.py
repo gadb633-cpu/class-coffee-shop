@@ -280,6 +280,24 @@ latte.describe()
 latte = Drink("Latte", 3.0, "large")
 latte.describe()
 
+# Extra 6. Shift Planning
+class Shift:
+    def __init__(self,barista_name, start_hour, end_hour, drinks_target):
+        self.barista_name = barista_name
+        self.start_hour = start_hour
+        self.end_hour = end_hour
+        self.drinks_target =drinks_target
+    def duration(self):
+        return self.end_hour - self.start_hour
+    def drinks_per_hour(self):
+       return self.drinks_target // self.duration() 
+    def is_long_shift(self):
+        return True if self.duration() >6 else False
+    def describe(self):
+        print(f"Barista: {self.barista_name} | Hours: {self.duration()} | Target: {self.drinks_target} | Per hour: {self.drinks_per_hour()} | Long shift: {self.is_long_shift()}")
+lior = Shift("Lior", 8, 16, 120)
+lior.describe()
+
 
 
 

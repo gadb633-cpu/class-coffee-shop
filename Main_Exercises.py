@@ -60,12 +60,32 @@ class MenuItem:
         self.in_stock=True
     def status(self):
         print(f"{self.name} is in stock.") if self.in_stock== True else print(f"{self.name} is sold out.")
+
 muffin = MenuItem("Muffin", 2.5, True)
 muffin.status()
 muffin.sell()
 muffin.status()
 muffin.restock()
 muffin.status()
+
+# 6. Coffee Shop Open and Close
+class CoffeeShop:
+    def __init__(self,name, city, capacity):
+        self.name = name
+        self.city = city
+        self.capacity = capacity
+
+    def open_shop(self):
+        print(f"{self.name} is now open in {self.city}! Capacity: {self.capacity} seats.")
+    def close_shop(self):
+        print(f"{self.name} is now closed. See you tomorrow!")
+Brew_House = CoffeeShop("Brew House", "Tel Aviv", 40)
+Brew_House.open_shop()
+Brew_House.close_shop()
+
+        
+
+
 
 
 

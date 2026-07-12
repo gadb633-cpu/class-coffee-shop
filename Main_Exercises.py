@@ -319,6 +319,30 @@ print(discount.is_active(17))
 print(discount.discounted_price(beer.price))
 print(discount.is_active(20))
 
+# Extra 8. Combo Deal
+class MenuItem:
+    def __init__(self,name, price):
+        self.name = name
+        self.price =price
+class Combo:
+    def __init__(self,name, items, discount):
+        self.name =name
+        self.items =items
+        self.discount = discount
+    def original_price(self):
+        self.sum =0
+        for self.item in self.items:
+            self.sum += self.item.price
+        return self.sum 
+    def combo_price(self):
+        return self.original_price()*(1-self.discount)
+    def savings(self):
+        return self.original_price()-self.combo_price()
+    def describe(self):
+        print(f"{self.name} | Original: ${self.original_price()} | Combo: ${self.combo_price()} | Savings: ${self.savings()}")
+
+breakfast = Combo("Breakfast", [MenuItem("Espresso", 3.5), MenuItem("Croissant", 2.5)], 0.1)                     
+breakfast.describe()
             
 
 

@@ -134,6 +134,44 @@ yossi.make_drink("coffee")
 print(yossi.is_specialty("Espresso"))
 yossi.shift_summary()
 
+# 10. Receipt with Tax
+class Receipt:
+    def __init__(self,tax_rate):
+        self.items = []
+        self.tax_rate = tax_rate
+    def add_item(self,name, price):
+        
+        self.items.append((name,price))
+    def subtotal(self):
+        self.sum = 0 
+        for self.item in self.items:
+            self.sum += self.item[1]
+        return self.sum
+
+    def tax_amount(self):
+        return self.subtotal() *self.tax_rate
+    def total(self):
+        return self.subtotal() + self.tax_amount()
+    def print_receipt(self):
+        for self.item in self.items:
+            print(f"-{self.item[0]}:,{self.item[1]}")
+        print(f"Subtotal: ${self.subtotal()}")
+        print(f"Tax (17%): ${self.tax_amount()}")
+        print(f"Total: ${self.total()}")
+receipt = Receipt(0.17)
+receipt.add_item("Latte", 4.5)
+receipt.add_item("Croissant", 2.0)
+receipt.add_item("Water", 1.5)
+receipt.print_receipt()
+
+
+
+
+
+
+
+
+
             
               
 

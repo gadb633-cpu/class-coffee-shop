@@ -182,6 +182,30 @@ print(espresso.is_cheap(3.0))
 print(muffin.is_drink())
 print(muffin.is_cheap(3.0))
 
+# Extra 2. Loyalty Points
+class Customer:
+    def __init__(self,name, balance):
+        self.name =name
+        self.balance = balance
+        self.points = 0
+    def purchase(self,item_name, price):    
+        if self.balance > price:
+            self.points += 10 
+            self.balance -= price
+        else:
+            print(f"Not enough balance for {item_name}.")
+    def redeem(self):
+        if self.points>=50:
+            self.balance += 5.0
+            self.points = 0 
+    def status(self):
+        print(f"Name: {self.name} | Balance: ${self.balance} | Points: {self.points}")       
+noa = Customer("Noa", 15.0)
+noa.purchase("coffee",10) 
+noa.redeem()
+noa.status()
+print(noa.balance)
+
 
 
 

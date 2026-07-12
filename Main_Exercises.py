@@ -206,6 +206,37 @@ noa.redeem()
 noa.status()
 print(noa.balance)
 
+# Extra 3. Timed Order
+class Order:
+    def __init__(self,customer_name, items):
+        self.customer_name=customer_name
+        self.items = items
+    def total_prep_time(self):
+        self.sum =0
+        for self.item in self.items:
+            self.sum += self.item[1]
+        return self.sum
+    def ready_by(self,minutes):
+        return True if self.total_prep_time()<=minutes else False
+    def print_order(self):
+        for self.item in self.items:
+            print(self.item)
+    def slowest_item(self):
+        self.longest = ("",0)
+        for self.item in self.items:
+            if self.item[1] > self.longest[1]:
+                self.longest = self.item
+        return f"slowest is: {self.longest[0]}"
+moshe = Order("Moshe", [("Latte", 3), ("Sandwich", 7), ("Smoothie", 5)])
+print(f"total prep: {moshe.total_prep_time()}")
+print(moshe.ready_by(10))
+print(moshe.ready_by(20))
+moshe.print_order()
+print(moshe.slowest_item())
+
+
+
+
 
 
 

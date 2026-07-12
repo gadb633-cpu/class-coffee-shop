@@ -298,6 +298,30 @@ class Shift:
 lior = Shift("Lior", 8, 16, 120)
 lior.describe()
 
+# Extra 7. Happy Hour Promotion
+class MenuItem:
+    def __init__(self,name,price):
+        self.name =name
+        self.price = price
+class HappyHour:
+    def __init__(self,start_hour, end_hour, discount_percent):
+        self.start_hour =start_hour
+        self.end_hour =end_hour
+        self.discount_percent =discount_percent
+    def is_active(self,current_hour):
+        return True if self.start_hour<=current_hour<self.end_hour else False
+    def discounted_price(self,item):
+        return item*(1-self.discount_percent/100)
+    
+beer = MenuItem("Beer", 20.0)
+discount = HappyHour(16, 18, 20)
+print(discount.is_active(17))
+print(discount.discounted_price(beer.price))
+print(discount.is_active(20))
+
+            
+
+
 
 
 

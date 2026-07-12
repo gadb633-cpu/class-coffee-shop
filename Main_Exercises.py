@@ -83,6 +83,25 @@ Brew_House = CoffeeShop("Brew House", "Tel Aviv", 40)
 Brew_House.open_shop()
 Brew_House.close_shop()
 
+# 7. Count Item Orders
+class MenuItem:
+    def __init__(self,name,price):
+        self.order_count = 0
+        self.name =name
+        self.price = price
+
+    def order(self):
+        self.order_count += 1
+        print(f"{self.name} ordered. Total orders: {self.order_count}")
+
+cappuccino = MenuItem("cappuccino", 4.0)
+cappuccino.order()
+cappuccino.order()
+cappuccino.order()
+
+
+
+
         
 
 

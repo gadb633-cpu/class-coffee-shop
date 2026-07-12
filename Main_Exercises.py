@@ -343,6 +343,62 @@ class Combo:
 
 breakfast = Combo("Breakfast", [MenuItem("Espresso", 3.5), MenuItem("Croissant", 2.5)], 0.1)                     
 breakfast.describe()
+
+# Extra 9. Menu Search and Stats
+class MenuItem:
+    def __init__(self,name, price, category):
+        self.name =name
+        self.price =price
+        self.category =category
+class Menu:
+    def __init__(self):
+        self.items = []
+    def add_item(self,item):
+        self.items.append(item)
+    def find_by_name(self,name):
+        for self.item in self.items:
+            if name == self.item.name:
+                return name
+        else:
+            return
+    def filter_by_category(self,category):
+        self.list_of_cate = [] 
+        for self.item in self.items:
+            if category ==self.item.category:
+                self.list_of_cate.append(category)
+        return self.list_of_cate
+    def cheapest(self):
+        self.item_cheapest = self.items[0].price
+        for self.item in self.items:
+            if self.item.price< self.item_cheapest:
+                self.item_cheapest = self.item.price
+        return self.item_cheapest        
+    def most_expensive(self):
+        self.item_expensive = 0
+        for self.item in self.items:
+            if self.item.price> self.item_expensive:
+                self.item_expensive = self.item.price
+        return self.item_expensive        
+    def average_price(self):
+        self.item_avg = 0
+        for self.item in self.items:
+            self.item_avg += self.item.price
+        return self.item_avg / len(self.items)
+breakfast = Menu()    
+breakfast.add_item(MenuItem("Espresso", 3.5,"drinks"))        
+breakfast.add_item(MenuItem("Croissant", 9.5,"maffin"))
+breakfast.add_item(MenuItem("coffee", 5.5,"drinks"))
+breakfast.add_item(MenuItem("capuchino", 6.5,"drinks"))
+breakfast.add_item(MenuItem("burecas", 11.5,"maffin"))
+print(breakfast.find_by_name("Espresso"))
+print(breakfast.filter_by_category("drinks"))
+print(breakfast.cheapest())
+print(breakfast.most_expensive())
+print(breakfast.average_price())
+
+
+
+
             
 
 

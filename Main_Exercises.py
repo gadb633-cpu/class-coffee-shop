@@ -99,6 +99,23 @@ cappuccino.order()
 cappuccino.order()
 cappuccino.order()
 
+# 8. Print an Order
+class Order:
+    def __init__(self,customer_name, items):
+        self.customer_name = customer_name
+        self.items = items
+    def item_count(self):
+        return len(self.items)
+    def print_order(self):
+        print(f"Order for: {self.customer_name} ,Items: {self.item_count()}")
+        for self.item in self.items:
+            print(f"-{self.item}")
+dana = Order("Dana", ["Latte", "Croissant", "OJ"])
+dana.print_order() 
+
+
+
+
 
 
 

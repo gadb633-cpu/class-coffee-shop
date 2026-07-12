@@ -113,6 +113,30 @@ class Order:
 dana = Order("Dana", ["Latte", "Croissant", "OJ"])
 dana.print_order() 
 
+# 9. Barista Shift Tracker
+class Barista:
+    def __init__(self,name, specialty):
+        self.drinks_made = 0
+        self.name = name
+        self.specialty = specialty
+    def make_drink(self,drink_name):
+        self.drinks_made+=1
+        print(f"{self.name} made a {drink_name}")
+    def is_specialty(self,drink_name):
+        return True if drink_name ==self.specialty else False
+    def shift_summary(self):
+        print(f"{self.name} made {self.drinks_made} drinks today.")
+yossi = Barista("Yossi", "Espresso")
+yossi.make_drink("Espresso")
+yossi.make_drink("latte")
+yossi.make_drink("cappuccino")
+yossi.make_drink("coffee")
+print(yossi.is_specialty("Espresso"))
+yossi.shift_summary()
+
+            
+              
+
 
 
 
